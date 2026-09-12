@@ -1,0 +1,87 @@
+/* Configuración general */
+body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 40px;
+    color: #333;
+}
+
+/* Título */
+h1 {
+    color: rgb(143, 16, 216);
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+/* Formulario */
+form {
+    width: 450px;
+    margin: auto;
+    padding: 30px;
+    background-color: #f5f5f5;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Etiquetas */
+label {
+    font-weight: bold;
+    margin: 8px;
+}
+
+/* Campos de texto, número, correo y fecha */
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+    padding: 10px;
+    margin: 8px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* Efecto cuando se selecciona un campo */
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border: 2px solid rgb(143, 16, 216);
+}
+
+/* Checkboxes y botones radio */
+input[type="checkbox"],
+input[type="radio"] {
+    margin: 5px;
+    accent-color: rgb(143, 16, 216);
+}
+
+/* Área de comentarios */
+textarea {
+    resize: none;
+}
+
+/* Botón Enviar */
+input[type="submit"] {
+    background-color: rgb(143, 16, 216);
+    color: white;
+    border: none;
+    padding: 12px 35px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+/* Efecto al pasar el mouse */
+input[type="submit"]:hover {
+    background-color: rgb(110, 10, 170);
+    transform: scale(1.05);
+}
