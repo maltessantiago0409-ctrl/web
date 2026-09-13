@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Productos</title>
 </head>
 <body bgcolor="black">
     <center>
@@ -11,10 +11,46 @@
         <img src="productos.png" width="500" height="300"><br>
         <label style="color:white">ID:</label> <input type="number"><br>
         <label style="color:white">Nombre:</label> <input type="text"><br>
-        <label style="color:white">Categoria:</label> <input type="text"><br>
-        <label style="color:white">Precio:</label> <input type="number"><br>
-        <label style="color:white">Stock:</label> <input type="number"><br>
-        <label style="color:white">Marca:</label> <input type="text"><br>
+        <label style="color: white;">Categoria:</label> <br>
+ 
+<form>
+    <div style="border: 1px solid #ccc; padding: 10px; width: 350px; border-radius: 5px; font-family: sans-serif;">
+        
+        <!-- Categoría 1: Plomería -->
+        <details style="margin-bottom: 10px;">
+            <summary style="font-weight: bold; cursor: pointer; background: #f0f0f0; padding: 8px; border-radius: 4px;">
+                Plomería y Grifería
+            </summary>
+            <div style="padding-left: 15px; margin-top: 8px;">
+                <label style="display: block; margin-bottom: 5px;color:white">
+                    <input type="checkbox" name="producto" value="1041"> Tubo PVC Presión Agua - $16,000
+                </label>
+                <label style="display: block; margin-bottom: 5px;color:white">
+                    <input type="checkbox" name="producto" value="1042"> Tubo PVC Sanitario - $45,000
+                </label>
+                <label style="display: block;color:white">
+                    <input type="checkbox" name="producto" value="1045"> Grifería Monocontrol - $145,000
+                </label>
+            </div>
+        </details>
+
+        <!-- Categoría 2: Electricidad -->
+        <details >
+            <summary style="font-weight: bold; cursor: pointer; background: #f0f0f0; padding: 8px; border-radius: 4px;">
+                Electricidad e Iluminación
+            </summary>
+            <div style="padding-left: 15px; margin-top: 8px;">
+                <label style="display: block; margin-bottom: 5px;color:white">
+                    <input type="checkbox" name="producto" value="2001" > Cable Enencauchetado - $5,000
+                </label>
+                <label style="display: block;color:white">
+                    <input type="checkbox" name="producto" value="2002"> Interruptor Simple - $8,500
+                </label>
+            </div>
+        </details>
+
+    </div>
+</form>
         <label style="color:white">Descripcion:</label><br>
         <textarea name="Descripción"></textarea><br>
         <input type="submit" value="enviar">
