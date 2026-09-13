@@ -1,0 +1,125 @@
+body {
+    background-color: #111;
+    font-family: Arial, sans-serif;
+    color: white;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 30px;
+    color: white;
+}
+
+body > center > img {
+    width: 500px;
+    height: 300px;
+    max-width: 90%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+/* Contenedor de productos */
+form > div {
+    width: 500px;
+    max-width: 90%;
+    margin: auto;
+    padding: 15px;
+    border: 1px solid #444 !important;
+    border-radius: 10px !important;
+    background-color: #1c1c1c;
+    box-sizing: border-box;
+}
+
+/* Categorias */
+details {
+    margin-bottom: 12px !important;
+}
+
+/* Titulo de cada categoria */
+summary {
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #00482B !important;
+    color: white;
+    padding: 12px !important;
+    border-radius: 6px !important;
+    font-size: 17px;
+}
+
+summary:hover {
+    background-color: #006b40 !important;
+}
+
+/* Contenido de cada categoria */
+details div {
+    padding: 15px !important;
+    margin-top: 8px !important;
+    background-color: #252525;
+    border-radius: 6px;
+}
+
+/* Imagenes de productos */
+details img {
+    width: 400px;
+    height: 300px;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Productos */
+label {
+    display: block;
+    margin-bottom: 12px !important;
+    color: white !important;
+    line-height: 1.5;
+}
+
+/* Cantidad */
+input[type="number"] {
+    width: 55px !important;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    padding: 3px;
+    font-size: 15px;
+    margin-right: 5px;
+    text-align: center;
+}
+
+input[type="number"]:focus {
+    outline: 2px solid #00a862;
+}
+
+/* Boton guardar */
+input[type="submit"] {
+    padding: 11px 25px !important;
+    margin-top: 15px;
+    background-color: #00482B;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #006b40;
+}
+
+/* Enlace */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    color: white;
+    font-size: 17px;
+}
+
+a:hover {
+    color: #00a862;
+}
