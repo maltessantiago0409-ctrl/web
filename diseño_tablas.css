@@ -1,0 +1,112 @@
+/* Estilos generales de la página */
+body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+    color: #2d3748;
+    margin: 0;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+/* Ocultar o estilizar el texto de conexión superior si lo deseas */
+body > div, body > span:first-child {
+    font-size: 0.85rem;
+    color: #718096;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Título principal */
+h2 {
+    text-align: center;
+    color: #1a202c;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Contenedor de la tabla con efecto de tarjeta flotante */
+table {
+    width: 95%;
+    max-width: 1300px;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #ffffff;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #edf2f7;
+}
+
+/* Encabezados de la tabla */
+th {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    color: #ffffff;
+    padding: 18px 24px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+/* Celdas del cuerpo */
+td {
+    padding: 20px 24px;
+    text-align: left;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.6;
+    vertical-align: middle;
+}
+
+/* Destacar la columna de categoría dándole un fondo sutil */
+td:first-child {
+    font-weight: 600;
+    color: #1e293b;
+    background-color: #f8fafc;
+    width: 25%;
+}
+
+/* Efecto hover en las filas */
+tr:hover td {
+    background-color: #f1f5f9;
+}
+
+/* Remover la línea inferior de la última fila */
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* Enlace "Volver al formulario" convertido en un botón elegante */
+a {
+    display: inline-block;
+    margin: 35px auto;
+    padding: 12px 28px;
+    background-color: #ffffff;
+    color: #3b82f6;
+    border: 2px solid #3b82f6;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+/* Contenedor para centrar el enlace (asegúrate de que el enlace esté dentro de un div o usa text-align en un contenedor) */
+p, div {
+    text-align: center;
+}
+
+a:hover {
+    background-color: #3b82f6;
+    color: #ffffff;
+    box-shadow: 0 6px 15px rgba(59, 130, 246, 0.3);
+    transform: translateY(-2px);
+}
