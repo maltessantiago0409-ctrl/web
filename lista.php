@@ -20,11 +20,33 @@ $sql = "SELECT documento, nombre, telefono, correo, fecha FROM usuarios";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Datos</title>
+    <style>
+    body {
+        background-color: black;
+        color: white;
+    }
+
+    table {
+        color: white;
+    }
+
+    th {
+        color: white;
+    }
+
+    td {
+        color: white;
+    }
+
+    a {
+        color: white;
+    }
+</style>
 </head>
-<body bgcolor="BLACK">
+<body bgcolor="BLACK" style="color: white;">
     <center>
     <h1 style="color: white;">Lista de clientes</h1>
-    <table border="1">
+    <table border="1" style="color: white;">
         <tr>
             <th>Documento</th>
             <th>Nombre</th>
