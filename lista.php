@@ -1,14 +1,14 @@
 <?php
-include 'conexion.php';
+include 'conectar.php';
 
 try{
-    $sql = "SELECT documento, nombre, telefono, correo, fecha, comentarios FROM estudiantes";
+$sql = "SELECT documento, nombre, telefono, correo, fecha FROM usuarios";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
-    $estudiantes = $stmt->fetchALL();
+    $usuarios = $stmt->fetchAll();
     
 }catch(PDOException $e){
-    die("Error al listar los estudiantes: " . $e->getMessage());
+    die("Error al listar los usuarios: " . $e->getMessage());
 }
 
 
@@ -21,7 +21,7 @@ try{
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Datos</title>
 </head>
-<body>
+<body bgcolor="BLACK">
     <center>
     <h1 style="color: white;">Lista de clientes</h1>
     <table border="1">
@@ -33,26 +33,25 @@ try{
             <th>Fecha de nacimiento</th>
         </tr>
         <?php
-            if(count($estudiantes) > 0):
-                foreach($estudiantes as $estudiante):
+            if(count($usuarios) > 0):
+                foreach($usuarios as $usuario):
         ?>
         <tr>
-            <td><?= htmlspecialchars($estudiante['documento']) ?></td>
-            <td><?= htmlspecialchars($estudiante['nombre']) ?></td>
-            <td><?= htmlspecialchars($estudiante['telefono']) ?></td>
-            <td><?= htmlspecialchars($estudiante['correo']) ?></td>
-            <td><?= htmlspecialchars($estudiante['fecha']) ?></td>
-            <td><?= htmlspecialchars($estudiante['comentarios']) ?></td>
+            <td><?= htmlspecialchars($usuario['documento']) ?></td>
+            <td><?= htmlspecialchars($usuario['nombre']) ?></td>
+            <td><?= htmlspecialchars($usuario['telefono']) ?></td>
+            <td><?= htmlspecialchars($usuario['correo']) ?></td>
+            <td><?= htmlspecialchars($usuario['fecha']) ?></td>
         </tr>
         <?php endforeach; ?>
     <?php else: ?>
         <tr>
-            <td colspan="6">No hay estudiantes registrados</td>
+            <td colspan="5">No hay clientes registrados</td>
         </tr>
     <?php endif; ?>
     </table>
     <br><br>
-    <a style="color: white;" href="taller.html">Volver al formulario</a>
+    <a style="color: white;" href="usuarios.html">Volver al formulario</a>
     </center>
 
 
