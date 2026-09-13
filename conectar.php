@@ -16,7 +16,7 @@ $options = [
 
 try {
     $conn = new PDO($dsn, $user, $pass, $options);
-    echo "Conexion exitosa a la base de datos: " . $db;
+    
 } catch (PDOException $e) {
     die("Error critico de conexion: " . $e->getMessage());
 }
