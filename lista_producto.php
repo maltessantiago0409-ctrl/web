@@ -20,32 +20,33 @@ $sql = "SELECT categoria, descripcion FROM productos";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Datos</title>
+    <link rel="stylesheet" href="diseño_tablas.css">
     <style>
     body {
         background-color: black;
-        color: white;
+        color: black;
     }
 
     table {
-        color: white;
+        color: black;
     }
 
     th {
-        color: white;
+        color: black;
     }
 
     td {
-        color: white;
+        color: black;
     }
 
     a {
-        color: white;
+        color: black;
     }
 </style>
 </head>
 <body bgcolor="BLACK" style="color: white;">
     <center>
-    <h1 style="color: white;">Lista de productos</h1>
+    <h1 style="color: black;">Lista de productos</h1>
     <table border="1" style="color: white;">
         <tr>
             <th>Categoria</th>
@@ -69,7 +70,7 @@ $sql = "SELECT categoria, descripcion FROM productos";
     <?php endif; ?>
     </table>
     <br><br>
-    <a style="color: white;" href="usuarios.html">Volver al formulario</a>
+    <a style="color: black;" href="usuarios.html">Volver a ver productos</a>
     </center>
 
 
