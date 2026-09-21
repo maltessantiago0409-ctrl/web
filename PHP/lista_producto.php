@@ -1,17 +1,16 @@
 <?php
 include 'conexion_productos.php';
 
-try{
-$sql = "SELECT categoria, descripcion FROM productos";
+try {
+    // 1. Agregamos 'id' a la consulta
+    $sql = "SELECT id, categoria, descripcion FROM productos";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
-    $usuarios = $stmt->fetchAll();
+    $productos = $stmt->fetchAll(); // Cambiamos $usuarios por $productos para mayor claridad
     
-}catch(PDOException $e){
-    die("Error al listar los usuarios: " . $e->getMessage());
+} catch(PDOException $e) {
+    die("Error al listar los productos: " . $e->getMessage());
 }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -19,61 +18,45 @@ $sql = "SELECT categoria, descripcion FROM productos";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datos</title>
-    <link rel="stylesheet" href="diseño_tablas.css">
+    <title>Lista de Productos</title>
+    <link rel="stylesheet" href="../css/diseño_tablas.css">
     <style>
-    body {
-        background-color: black;
-        color: black;
-    }
-
-    table {
-        color: black;
-    }
-
-    th {
-        color: black;
-    }
-
-    td {
-        color: black;
-    }
-
-    a {
-        color: black;
-    }
-</style>
+        body { background-color: black; color: white; font-family: Arial, sans-serif; margin: 30px; }
+        table { color: white; width: 80%; margin: 0 auto; border-collapse: collapse; }
+        th, td { padding: 10px; border: 1px solid #444; text-align: left; }
+        th { background-color: #222; }
+        a { color: #4CAF50; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
 </head>
-<body bgcolor="BLACK" style="color: white;">
+<body>
     <center>
-    <h1 style="color: black;">Lista de productos</h1>
-    <table border="1" style="color: white;">
-        <tr>
-            <th>Categoria</th>
-            <th>Descripción</th>
-
-        </tr>
-        <?php
-            if(count($usuarios) > 0):
-                foreach($usuarios as $usuario):
-        ?>
-        <tr>
-            <td><?= htmlspecialchars($usuario['categoria']) ?></td>
-            <td><?= htmlspecialchars($usuario['descripcion']) ?></td>
-
-        </tr>
-        <?php endforeach; ?>
-    <?php else: ?>
-        <tr>
-            <td colspan="5">No hay clientes registrados</td>
-        </tr>
-    <?php endif; ?>
-    </table>
-    <br><br>
-    <a style="color: black;" href="usuarios.html">Volver a ver productos</a>
+        <h1>Lista de productos</h1>
+        <table>
+            <tr>
+                <th>Categoria</th>
+                <th>Descripción</th>
+                <th>Acciones</th>
+            </tr>
+            <?php if(count($productos) > 0): ?>
+                <?php foreach($productos as $producto): ?>
+            <tr>
+                <td><?= htmlspecialchars($producto['categoria']) ?></td>
+                <td><?= htmlspecialchars($producto['descripcion']) ?></td>
+                <td>
+                    <!-- Enlace que conecta con el archivo de edición pasando el ID -->
+                    <a href="editar_productos.php?id=<?= $producto['id'] ?>">Editar</a>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <tr>
+                <td colspan="3" style="text-align: center;">No hay productos registrados</td>
+            </tr>
+        <?php endif; ?>
+        </table>
+        <br><br>
+        <a href="../productos.html">Volver a registrar productos</a>
     </center>
-
-
-    
 </body>
 </html>

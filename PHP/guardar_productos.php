@@ -34,15 +34,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                 $stmt = $conn->prepare($sql);
 
                 $stmt->execute([
-                    ':categoria' => $categoria_final,
+                    ':categoria'   => $categoria_final,
                     ':descripcion' => $descripcion_total
                 ]);
 
                 echo "¡El pedido completo se guardó en un solo registro!";
                 echo "<br><br>";
-                echo "<a href='productos.html'>Volver al formulario</a>";
+                echo "<a href='../productos.html'>Volver al formulario</a>";
             } else {
-                echo "No ingresaste ninguna cantidad mayor a 0. <a href='productos.html'>Volver</a>";
+                echo "No ingresaste ninguna cantidad mayor a 0. <a href='../productos.html'>Volver</a>";
             }
 
         } catch (PDOException $e) {
