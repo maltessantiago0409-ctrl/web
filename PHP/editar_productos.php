@@ -99,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="error"><?= htmlspecialchars($error) ?></div>
     <?php endif; ?>
 
-    <form action="editar.php" method="POST">
+    <form action="editar_productos.php" method="POST">
         <!-- Campo oculto para conservar el ID del producto -->
         <input type="hidden" name="id_producto" value="<?= htmlspecialchars($producto['id'] ?? '') ?>">
 

@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
                 // Unimos las categorías con una coma (ej: "Plomería, Electricidad")
                 $categoria_final = implode(", ", $categorias_seleccionadas);
 
-                $sql = "INSERT INTO productos (categoria, descripcion) VALUES (:categoria, :descripcion)";
+                $sql = "INSERT INTO productos (categoria, descripcion,estado) VALUES (:categoria, :descripcion,1)";
                 $stmt = $conn->prepare($sql);
 
                 $stmt->execute([

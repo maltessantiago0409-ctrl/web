@@ -2,11 +2,11 @@
 include 'conexion_productos.php';
 
 try {
-    // 1. Agregamos 'id' a la consulta
-    $sql = "SELECT id, categoria, descripcion FROM productos";
+    // Agregamos el WHERE estado = 1 para que al eliminar (poner en 0) desaparezcan de la lista
+    $sql = "SELECT id, categoria, descripcion FROM productos WHERE estado = 1";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
-    $productos = $stmt->fetchAll(); // Cambiamos $usuarios por $productos para mayor claridad
+    $productos = $stmt->fetchAll(); 
     
 } catch(PDOException $e) {
     die("Error al listar los productos: " . $e->getMessage());
@@ -44,8 +44,10 @@ try {
                 <td><?= htmlspecialchars($producto['categoria']) ?></td>
                 <td><?= htmlspecialchars($producto['descripcion']) ?></td>
                 <td>
-                    <!-- Enlace que conecta con el archivo de edición pasando el ID -->
-                    <a href="editar_productos.php?id=<?= $producto['id'] ?>">Editar</a>
+                    <!-- Enlace corregido hacia el archivo de edición -->
+                    <a href="editar_productos.php?id=<?= $producto['id'] ?>">Editar</a> 
+                    <!-- Enlace corregido usando $producto en lugar de $estudiante -->
+                    <a href="eliminar_productos.php?id=<?= $producto['id'] ?>" class="btn-eliminar" onclick="return confirm('¿Estás seguro de que deseas eliminar este producto?');">Eliminar</a>
                 </td>
             </tr>
             <?php endforeach; ?>
